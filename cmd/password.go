@@ -8,7 +8,7 @@ import (
 )
 
 var generateCmd = &cobra.Command{
-	Use: "passwordGen",
+	Use: "generate",
 	Short: "Generate random passwords",
 	Long: `Generate random passwords with customisable options.
 
