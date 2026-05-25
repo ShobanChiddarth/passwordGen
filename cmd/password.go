@@ -8,7 +8,7 @@ import (
 )
 
 var generateCmd = &cobra.Command{
-	Use: "generate",
+	Use: "passwordGen",
 	Short: "Generate random passwords",
 	Long: `Generate random passwords with customisable options.
 
@@ -41,4 +41,13 @@ func generatePassword(cmd *cobra.Command, args []string) {
 	}
 
 	fmt.Println(string(password))
+}
+
+
+func init() {
+	rootCmd.AddCommand(generateCmd)
+
+	generateCmd.Flags().IntP("length", "l", 12, "Length of the generated password")
+	generateCmd.Flags().BoolP("digits", "d", true, "Include digits in generated password")
+	generateCmd.Flags().BoolP("special", "s", true, "Include special characters in generated password")
 }
