@@ -1,4 +1,4 @@
-module github.com/shobanchiddarth/gocobratutorial
+module github.com/ShobanChiddarth/passwordGen
 
 go 1.26.3
 
