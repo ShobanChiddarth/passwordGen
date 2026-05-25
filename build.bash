@@ -19,7 +19,7 @@ for t in "${targets[@]}"; do
   ext=""
   [ "$GOOS" = "windows" ] && ext=".exe"
   # filename pattern: <app>-<os>-<arch>-v<version>[.exe]
-  out="$outdir/${app}-${GOOS}-${GOARCH}-v${version}${ext}"
+  out="$outdir/${app}-${GOOS}-${GOARCH}-${version}${ext}"
   echo "Building $out from $(pwd)..."
   CGO_ENABLED=0 GOOS=$GOOS GOARCH=$GOARCH go build -ldflags="-s -w" -o "$out" .
 done
